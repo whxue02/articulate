@@ -51,27 +51,19 @@ Articulate is an AI-powered voice preservation and communication platform that e
 - Custom login page consistent with branding
 
 **Backend:**
-- Node.js
-- Flask, Gemini API and python for ASL processing
+- Flask as the server
+- MiCT-RANet open source model for ASL processing, Gemini API to act as "autocorrect", ElevenLabs to generate speech
 - ElevenLabs API for voice cloning and text to speech 
-- MediaRecorderAPI for video capture
 - Auth0 for user authentication
-- Axios for HTTP requests
-- npm for package manager
 
 ---
 
-## 🧩 Technical Challenges 
-**Challenge 1: Real-time ASL processing:**
-Processing the videos for ASL fingerspelling requires balancing accuracy and speed. We implemented frame sampling and optimized a ML pipeline to achieve real-time results.
+## 🧩 Challenges 
 
-**Challenge 2: Voice quality and balancing processing time:**
-ElevenLabs provides voice cloning but with latency so we added loading states and cached voice IDs.
-
-**Challenge 3: Ethical considerations:**
+**Challenge 1: Ethical considerations:**
 Voice cloning can raise serious ethical concerns which is why we made a mandatory terms and conditions agreement to explain user guidelines and outline what prohibited use cases would be.
 
-**Challenge 4: Accessibility-first:**
+**Challenge 2: Accessibility-first:**
 Creating an interface to accommodate the many forms of alternative communication was important to allow usability by people with varying abilities required consideration of contrast, button size and alternative input methods to use your voice.
 
 ---
@@ -110,37 +102,6 @@ Creating an interface to accommodate the many forms of alternative communication
 ---
 
 ## 🧾 Acknowledgments & References  
-- ElevenLabs for voice cloning 
-- Auth0 for authentication  
-- MediaPipe/Tensor Flow for ASL detection  
+- MiCT-RANet for real-time ASL fingerspelling video recognition by Florent Mahoudeau (2020). [GitHub repository](https://github.com/fmahoudeau/MiCT-RANet-ASL-FingerSpelling)
 
----
 
-## ⚠️ Known Limitations / Risks  
-**Current limitations: **
-- Video File size limit of 100MB 
-- Quality depends on input audio  
-- Limited to fingerspelling  
-- Requires online connection 
-
-**Ethical Risks we mitigated:**
-- Voice impersonation mitigated through consent requirements and ElevenLabs verification
-- DeepFake abuse mitigated through terms that prohibit malicious use
-- Privacy concerns mitigated through secure data storing 
-
----
-
-## 📈 Impact Metrics
-
-**Potential users:**
-- 29.9 million Americans with voice difficulties
-- 5,000 new ALS diagnoses per year
-- 13,000 new laryngeal cancer diagnoses per year 
-
-**User value:**
-- Voice preservation in less than 5 minutes
-- Communication at natural speaking tone and pace
-- Maintain self-expression
-- Cost savings over Augmentative and Alternative Communication Devices
-
----
